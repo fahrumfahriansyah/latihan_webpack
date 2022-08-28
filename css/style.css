@@ -1,0 +1,609 @@
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+    display: block;
+}
+
+body {
+    line-height: 1;
+}
+
+ol,
+ul {
+    list-style: none;
+}
+
+blockquote,
+q {
+    quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+    content: '';
+    content: none;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+/* meyer web */
+
+
+.container {
+    background-color: salmon;
+    width: 100%;
+}
+
+.navbar {
+    padding: 2px;
+    display: flex;
+    flex-grow: 2;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.judul {
+    cursor: none;
+    font-size: 30px;
+    order: 1;
+    margin: auto 10px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.search {
+    order: 8;
+    padding: 5px 0px;
+    border-radius: 3%;
+    margin: 0px;
+}
+
+.search input {
+    height: 20px;
+    border-radius: 10px;
+    margin-left: 10px;
+    padding: 15px;
+}
+
+.search button {
+    background-color: rgb(236, 11, 11);
+    width: 70px;
+    height: 40px;
+    margin-right: 20px;
+    border-radius: 15%;
+    color: whitesmoke;
+}
+
+.search button:hover {
+    background-color: rgb(7, 236, 252);
+    width: 70px;
+    height: 40px;
+    margin-right: 20px;
+    border-radius: 15%;
+    color: whitesmoke;
+}
+
+/*tutup navbar */
+
+main {
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    padding: 20px 0px;
+}
+
+.article1 {
+    width: 100%;
+    background-color: rgb(238, 238, 238);
+    box-shadow: 5px 4px 20px black;
+    width: 50%;
+    opacity: 0.8;
+    margin: auto;
+    margin-bottom: 85px;
+}
+
+.formData {
+    font-size: 20px;
+    padding: 20px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+
+.formData .labelBook {
+    text-shadow: 0px 1px 1px rgb(15, 15, 15);
+}
+
+.inputJudul {
+    margin: 10px 20px;
+    width: 90%;
+    height: 20px;
+    padding: 5px 5px;
+}
+
+.inputPenulis {
+    margin: 10px 20px;
+    width: 90%;
+    height: 20px;
+    padding: 5px 5px;
+}
+
+.inputTahun {
+    margin: 10px 20px;
+    width: 90%;
+    height: 20px;
+    padding: 5px 5px;
+}
+
+.buttonAdd {
+    width: 100%;
+    margin-top: 20px;
+}
+
+/* TUTUP INPUT DATA  article1*/
+
+.container1 {
+    width: 50%;
+    margin: 0px auto;
+    background-color: rgb(238, 238, 238);
+    box-shadow: 5px 5px 20px black;
+    padding: 30px;
+    border-radius: 10px;
+}
+
+.jumbroton {
+    width: 80%;
+    background-color: rgb(37, 178, 254);
+    margin: 10px auto;
+    padding: 20px;
+    border-radius: 30px;
+    box-shadow: 0px 0px 20px black;
+}
+
+.jumbroton li {
+    font-size: 25px;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-style: italic;
+    color: aliceblue;
+    text-shadow: 1px 2px 5px black;
+    padding-left: 20px;
+}
+
+.jumbroton li button {
+    width: auto;
+    background-color: rgb(130, 5, 5);
+    color: aliceblue;
+    border: 0px solid black;
+    padding: 5px 20px;
+    border-radius: 10px;
+    transition: 1s;
+    cursor: pointer;
+}
+
+.jumbroton li button:hover {
+    width: auto;
+    transform: scale(0.9);
+    background-color: rgb(130, 5, 5);
+    color: aliceblue;
+    border: 0px solid black;
+    padding: 10px 20px;
+    border-radius: 10px;
+    transition: 1s;
+}
+
+.liBtn1 {
+    display: inline-block;
+    text-align: start;
+}
+
+.liBtn2 {
+    display: inline-block;
+    text-align: end;
+    margin-left: 5%
+}
+
+/* tutup article 2 */
+.article3 {
+    width: 80%;
+    margin: 10px auto;
+    display: flex;
+    flex-direction: row;
+    margin-bottom: 100px;
+
+}
+
+.alreadySeen {
+    background-color: rgb(238, 238, 238);
+    width: 45%;
+    margin: 2% 0px;
+    padding: 20px;
+    box-shadow: 0px 10px 19px black;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    height: fit-content;
+}
+
+.notSeen {
+    background-color: rgb(238, 238, 238);
+    width: 45%;
+    margin: 2%;
+    padding: 20px;
+    box-shadow: 0px 10px 19px black;
+    height: fit-content;
+}
+
+.data1 {
+    background-color: rgb(254, 106, 37);
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 20px black;
+}
+
+.data2 {
+    background-color: rgb(254, 106, 37);
+    padding: 10px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 20px black;
+}
+
+.value li {
+    margin: 10px;
+    display: inline-block;
+    color: whitesmoke;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    font-style: italic;
+}
+
+.btn {
+    margin-left: 150px;
+    background-color: rgb(130, 5, 5);
+    color: aliceblue;
+    border: 0px solid black;
+    padding: 10px 20px;
+    border-radius: 10px;
+    transition: 1s;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: rgb(130, 5, 5);
+    border: 0px solid black;
+    padding: 8px 16px;
+}
+
+.btn1 {
+    margin-left: 0px;
+    background-color: rgb(130, 5, 5);
+    color: aliceblue;
+    border: 0px solid black;
+    padding: 10px 20px;
+    border-radius: 10px;
+    transition: 1s;
+    cursor: pointer;
+}
+
+.btn1:hover {
+    background-color: rgb(130, 5, 5);
+    padding: 8px 16px;
+}
+
+.btn2 {
+    background-color: rgb(130, 5, 5);
+    color: aliceblue;
+    border: 0px solid black;
+    padding: 10px 20px;
+    border-radius: 10px;
+    transition: 1s;
+    cursor: pointer;
+}
+
+.btn2:hover {
+    background-color: rgb(130, 5, 5);
+    color: aliceblue;
+    padding: 8px 16px;
+}
+
+@media (max-width: 1000px) {
+    main {
+        display: flex;
+        flex-direction: column;
+        background-color: white;
+        padding: 20px 0px;
+    }
+
+    .article1 {
+        margin-top: 0px;
+        width: 100%;
+        background-color: rgb(238, 238, 238);
+        width: 100%;
+    }
+
+    .formData {
+        font-size: 20px;
+        padding: 20px;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    }
+
+    .formData .labelBook {
+        text-shadow: 0px 1px 1px rgb(15, 15, 15);
+    }
+
+
+    .inputBook {
+        margin: 10px 10%;
+        width: 90%;
+        height: 20px;
+    }
+
+
+    .btn {
+        margin-left: 0px;
+        background-color: rgb(130, 5, 5);
+        color: aliceblue;
+        border: 0px solid black;
+        padding: 10px 20px;
+        border-radius: 10px;
+        transition: 1s;
+        cursor: pointer;
+    }
+
+    .btn:hover {
+        background-color: rgb(130, 5, 5);
+        border: 0px solid black;
+        padding: 8px 16px;
+    }
+
+    .btn1 {
+        margin-left: 0px;
+        background-color: rgb(130, 5, 5);
+        color: aliceblue;
+        border: 0px solid black;
+        padding: 10px 20px;
+        border-radius: 10px;
+        transition: 1s;
+        cursor: pointer;
+    }
+
+    .btn1:hover {
+        margin-left: 60px;
+        background-color: rgb(130, 5, 5);
+        padding: 8px 16px;
+    }
+
+    .btn2 {
+        background-color: rgb(130, 5, 5);
+        color: aliceblue;
+        border: 0px solid black;
+        padding: 10px 20px;
+        border-radius: 10px;
+        transition: 1s;
+        cursor: pointer;
+    }
+
+    .btn2:hover {
+        background-color: rgb(130, 5, 5);
+        color: aliceblue;
+        padding: 8px 16px;
+    }
+
+    /* tutup article1 */
+    .container1 {
+        width: 50%;
+        margin: 0px auto;
+        background-color: rgb(238, 238, 238);
+        box-shadow: 5px 5px 20px black;
+        padding: 30px;
+        border-radius: 10px;
+    }
+
+    .jumbroton {
+        width: 80%;
+        background-color: rgb(37, 178, 254);
+        margin: 10px auto;
+        padding: 20px;
+        border-radius: 30px;
+        box-shadow: 0px 0px 20px black;
+    }
+
+    .jumbroton li {
+        font-size: 15px;
+        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        font-style: italic;
+        color: aliceblue;
+        text-shadow: 1px 2px 5px black;
+        padding-left: 20px;
+        margin: 5px 0px;
+    }
+
+    .jumbroton li button {
+        width: auto;
+        background-color: rgb(130, 5, 5);
+        color: aliceblue;
+        border: 0px solid black;
+        padding: 3px 10px;
+        border-radius: 10px;
+        transition: 1s;
+        cursor: pointer;
+        font-size: 10px;
+    }
+
+    .jumbroton li button:hover {
+        width: auto;
+        background-color: rgb(130, 5, 5);
+        color: aliceblue;
+        border: 0px solid black;
+        padding: 3px 10px;
+        border-radius: 5px;
+        transition: 1s;
+        cursor: pointer;
+        font-size: 10px;
+    }
+
+    .liBtn1 {
+        display: inline-block;
+        text-align: start;
+        margin-left: 20px;
+    }
+
+    .liBtn2 {
+        display: inline-block;
+        text-align: end;
+    }
+
+    /* tutup article 2 */
+
+    .article3 {
+        width: 80%;
+        margin: 40px auto;
+        display: flex;
+        flex-direction: column;
+
+    }
+
+    .alreadySeen {
+        background-color: rgb(238, 238, 238);
+        width: 80%;
+        margin: 2%;
+        box-shadow: 0px 10px 19px black;
+    }
+
+    .notSeen {
+        background-color: rgb(238, 238, 238);
+        width: 80%;
+        margin: 2%;
+        box-shadow: 0px 10px 19px black;
+    }
+
+    .data1 {
+        background-color: rgb(254, 106, 37);
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0px 0px 20px black;
+    }
+
+    .data2 {
+        background-color: rgb(254, 106, 37);
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0px 0px 20px black;
+    }
+
+    .value li {
+        margin: 10px;
+        display: inline-block;
+        color: whitesmoke;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        font-style: italic;
+    }
+
+
+
+
+}
