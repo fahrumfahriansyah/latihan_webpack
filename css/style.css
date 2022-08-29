@@ -395,7 +395,7 @@ main {
 }
 
 .btn2 {
-    background-color: rgb(130, 5, 5);
+    background-color: rgb(5, 130, 34);
     color: aliceblue;
     border: 0px solid black;
     padding: 10px 20px;
@@ -405,7 +405,7 @@ main {
 }
 
 .btn2:hover {
-    background-color: rgb(130, 5, 5);
+    background-color: rgb(5, 130, 34);
     color: aliceblue;
     padding: 8px 16px;
 }
@@ -472,13 +472,12 @@ main {
     }
 
     .btn1:hover {
-        margin-left: 60px;
         background-color: rgb(130, 5, 5);
         padding: 8px 16px;
     }
 
     .btn2 {
-        background-color: rgb(130, 5, 5);
+        background-color: rgb(5, 130, 22);
         color: aliceblue;
         border: 0px solid black;
         padding: 10px 20px;
@@ -488,7 +487,7 @@ main {
     }
 
     .btn2:hover {
-        background-color: rgb(130, 5, 5);
+        background-color: rgb(5, 130, 34);
         color: aliceblue;
         padding: 8px 16px;
     }

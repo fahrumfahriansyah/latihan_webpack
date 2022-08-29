@@ -21,6 +21,7 @@ let dataLoad;
 let boolean;
 let jumbroton = []
 let lo = []
+let complete = []
 
 //!pencarian boolean
 inputPilih.forEach(a => {
@@ -219,7 +220,7 @@ function jumFal(a) {
         <li class="liBtn2"> <button class="hapus" name="${a.title}">
                 hapus </button>
         </li>
-        <li style="display: inline-block; text-align: end;"><button class="baca">Sudah di baca</button></li>
+        <li style="display: inline-block; text-align: end;"><button class="baca" style="background-color: rgb(5, 130, 22);" name="${a.title}" >Sudah di baca</button></li>
     </ul>
 </div>`
 }
@@ -266,7 +267,7 @@ function dat1(a) {
                         <h3>tahun: ${a.year}</h3>
                     </li>
                     <li><button class="btn1 hapus" name="${a.title}">hapus</button></li>
-                    <li><button class="btn2 baca">sudah di Baca</button></li>
+                    <li><button class="btn2 baca" name="${a.title}">sudah di Baca</button></li>
 
                 </ul>
             </div>
@@ -293,7 +294,6 @@ hapus.forEach(a => {
 
         data1.forEach((a, b) => {
             if (a.title === dataHapus.title) {
-                console.log(dataHapus);
             } else {
                 const datanya2 = localStorage.getItem(`data`)
                 const data2 = JSON.parse(datanya2)
@@ -312,3 +312,44 @@ hapus.forEach(a => {
     })
 })
 //! tutup
+// ! ketika tombol sudah di baca di klik
+function namaIsComplete(dat) {
+    const datanya1 = localStorage.getItem(`data`)
+    const data1 = JSON.parse(datanya1)
+    const data = data1.find((a) => a.title === dat)
+    return data
+}
+const baca = document.querySelectorAll('.baca')
+baca.forEach(a => {
+    a.addEventListener('click', function (b) {
+        const ubah = a.getAttribute('name')
+        const isComplete = namaIsComplete(ubah)
+        const datanya1 = localStorage.getItem(`data`)
+        const data1 = JSON.parse(datanya1)
+        let completeJumb = ``
+        data1.forEach((a, b) => {
+            if (a.title === isComplete.title) {
+                a.isComplete = "true"
+                completeJumb += jumTru(a)
+                complete.push(a)
+            } else {
+                const datanya2 = localStorage.getItem(`data`)
+                const data2 = JSON.parse(datanya2)
+                complete.push(data2[b])
+
+            }
+        })
+        container1.innerHTML = completeJumb
+        let consfirm = confirm('Apakah Buku Sudah Dibaca ?')
+        if (consfirm) {
+            alert('refresh halaman')
+            console.log(complete);
+            localStorage.removeItem('data')
+            localStorage.setItem('data', JSON.stringify(complete))
+            complete = []
+        }
+
+    })
+
+})
+//! tutup halaman baca
