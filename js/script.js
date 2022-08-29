@@ -43,7 +43,7 @@ window.addEventListener('load', function () {
 
 //! ketika input di click
 //? ada dua jenis data ketika data di load dan ketika data kosong di input click ini
-addButton.addEventListener('click', function (a) {
+addButton.addEventListener('click', function () {
     obj.id = Math.floor(Math.random() * 1000 + 100 * 1000 / 10 * Math.random() * 1000 + 100 * 1000 / 10)
     obj.title = inputJudul.value
     obj.author = inputPenulis.value
@@ -321,7 +321,7 @@ function namaIsComplete(dat) {
 }
 const baca = document.querySelectorAll('.baca')
 baca.forEach(a => {
-    a.addEventListener('click', function (b) {
+    a.addEventListener('click', function () {
         const ubah = a.getAttribute('name')
         const isComplete = namaIsComplete(ubah)
         const datanya1 = localStorage.getItem(`data`)
