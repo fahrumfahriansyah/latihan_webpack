@@ -353,3 +353,37 @@ baca.forEach(a => {
 
 })
 //! tutup halaman baca
+// ! ketika input search di  gunakan
+const inputSearch = document.querySelector('.inputSearch')
+const buttonSearch = document.querySelector('.buttonSearch')
+
+function namaSearch(dat) {
+    const datanya1 = localStorage.getItem(`data`)
+    const data1 = JSON.parse(datanya1)
+    const data = data1.find((a) => a.title === dat)
+    return data
+}
+
+buttonSearch.addEventListener('click', function (a) {
+    if (inputSearch.value) {
+        const Search = namaSearch(inputSearch.value)
+        if (Search) {
+            const datanya1 = localStorage.getItem(`data`)
+            const data1 = JSON.parse(datanya1)
+            data1.forEach(a => {
+                if (a.title === Search.title) {
+                    localStorage.removeItem('jumbo')
+                    localStorage.setItem('jumbo', JSON.stringify(a))
+                }
+            })
+
+        } else {
+            alert('data anda salah')
+        }
+    } else {
+        alert('tuliskan pencarian')
+    }
+
+})
+
+//! tutup ketika input search di gunakan
