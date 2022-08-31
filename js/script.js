@@ -307,7 +307,7 @@ hapus.forEach(a => {
         })
         let cons = confirm('Apakah anda yakin?')
         if (cons) {
-            alert('buku telah di hapus silakan')
+            alert('buku telah di hapus')
             localStorage.removeItem('data')
             localStorage.setItem('data', JSON.stringify(lo))
             b.preventDefault()
