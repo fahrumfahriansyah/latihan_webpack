@@ -436,7 +436,7 @@ yyyy-dd-mm`)
     if (valueEdit) {
         alert('data judul buku sudah ada anda harus mengisi data judul yang baru')
     } else {
-        alert('refresh halaman')
+        alert('data telah di ubah')
         localStorage.removeItem('jumbo')
         localStorage.setItem('jumbo', JSON.stringify(data1))
         // ?
