@@ -207,6 +207,7 @@ function jumTru(a) {
         <li class="liBtn2"> <button class="hapus" name="${a.title}">
                 hapus </button>
         </li>
+        <li style="display: inline-block; text-align: end;"><button class="edit" style="background-color: rgb(5, 130, 22);" name="${a.title}" >edit</button></li>
     </ul>
 </div>`
 }
@@ -221,6 +222,9 @@ function jumFal(a) {
                 hapus </button>
         </li>
         <li style="display: inline-block; text-align: end;"><button class="baca" style="background-color: rgb(5, 130, 22);" name="${a.title}" >Sudah di baca</button></li>
+        <li style="display: inline-block; text-align: end;"><button class="edit" style="    background-color: rgb(2, 56, 59);
+        " name="${a.title}" >edit</button></li>
+
     </ul>
 </div>`
 }
@@ -303,11 +307,12 @@ hapus.forEach(a => {
         })
         let cons = confirm('Apakah anda yakin?')
         if (cons) {
-            alert('buku telah di hapus silakan refresh halaman')
+            alert('data sudah di hapus')
             localStorage.removeItem('data')
             localStorage.setItem('data', JSON.stringify(lo))
             b.preventDefault()
             lo = []
+            location.reload()
         }
     })
 })
@@ -330,6 +335,8 @@ baca.forEach(a => {
         data1.forEach((a, b) => {
             if (a.title === isComplete.title) {
                 a.isComplete = "true"
+                localStorage.removeItem('jumbo')
+                localStorage.setItem('jumbo', JSON.stringify(a))
                 completeJumb += jumTru(a)
                 complete.push(a)
             } else {
@@ -340,14 +347,12 @@ baca.forEach(a => {
             }
         })
         container1.innerHTML = completeJumb
-        let consfirm = confirm('Apakah Buku Sudah Dibaca ?')
-        if (consfirm) {
-            alert('refresh halaman')
-            console.log(complete);
-            localStorage.removeItem('data')
-            localStorage.setItem('data', JSON.stringify(complete))
-            complete = []
-        }
+        alert('data sudah di pindahkan')
+        console.log(complete);
+        localStorage.removeItem('data')
+        localStorage.setItem('data', JSON.stringify(complete))
+        complete = []
+        location.reload()
 
     })
 
@@ -383,7 +388,71 @@ buttonSearch.addEventListener('click', function (a) {
     } else {
         alert('tuliskan pencarian')
     }
-
 })
 
 //! tutup ketika input search di gunakan
+
+//! ketika menu edit di klik
+const edit = document.querySelector('.edit')
+function namaEdit(dat) {
+    const datanya1 = localStorage.getItem(`data`)
+    const data1 = JSON.parse(datanya1)
+    const data = data1.find((a) => a.title === dat)
+    return data
+}
+edit.addEventListener('click', function () {
+    let title;
+    let author;
+    let years;
+    const datanya2 = localStorage.getItem(`jumbo`)
+    let data2 = JSON.parse(datanya2)
+    const datanya1 = localStorage.getItem(`jumbo`)
+    let data1 = JSON.parse(datanya1)
+    let nama = confirm('edit nama ?')
+    if (nama) {
+        title = prompt('masukan nama baru')
+        if (title) {
+            data1.title = title
+        }
+    }
+    let penulis = confirm('edit penulis ?')
+    if (penulis) {
+        author = prompt('masukan penulis baru')
+        if (author) {
+            data1.author = author
+        }
+    }
+
+    let tahun = confirm('edit tahun ?')
+    if (tahun) {
+        years = prompt('masukan tahun yyyy-dd-mm')
+        if (years) {
+            data1.year = years
+        }
+    }
+    const valueEdit = namaEdit(title)
+    if (valueEdit) {
+        alert('data judul buku sudah ada anda harus mengisi data yang penulis yang baru')
+    } else {
+        alert('data buku sudah di ganti')
+        localStorage.removeItem('jumbo')
+        localStorage.setItem('jumbo', JSON.stringify(data1))
+        // ?
+        const datanya = localStorage.getItem(`data`)
+        const data = JSON.parse(datanya)
+        let arr = []
+        data.forEach(a => {
+            if (a.title === data2.title) {
+                a = data1
+                arr.push(a)
+            } else {
+                arr.push(a)
+            }
+        })
+        localStorage.removeItem('data')
+        localStorage.setItem('data', JSON.stringify(arr))
+        location.reload()
+    }
+})
+
+//!
