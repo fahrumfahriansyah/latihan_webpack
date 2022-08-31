@@ -307,7 +307,7 @@ hapus.forEach(a => {
         })
         let cons = confirm('Apakah anda yakin?')
         if (cons) {
-            alert('buku telah di hapus silakan refresh halaman')
+            alert('buku telah di hapus')
             localStorage.removeItem('data')
             localStorage.setItem('data', JSON.stringify(lo))
             b.preventDefault()
@@ -347,7 +347,7 @@ baca.forEach(a => {
             }
         })
         container1.innerHTML = completeJumb
-        alert('refresh halaman data sudah di pindahkan')
+        alert(' data sudah di pindahkan')
         console.log(complete);
         localStorage.removeItem('data')
         localStorage.setItem('data', JSON.stringify(complete))
