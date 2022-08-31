@@ -22,6 +22,7 @@ let boolean;
 let jumbroton = []
 let lo = []
 let complete = []
+let complete1 = []
 
 //!pencarian boolean
 inputPilih.forEach(a => {
@@ -207,6 +208,7 @@ function jumTru(a) {
         <li class="liBtn2"> <button class="hapus" name="${a.title}">
                 hapus </button>
         </li>
+        <li style="display: inline-block; text-align: end;"><button class="belum" style="background-color: rgb(5, 130, 22);" name="${a.title}" >Belum di baca</button></li>
         <li style="display: inline-block; text-align: end;"><button class="edit" style="background-color: rgb(5, 130, 22);" name="${a.title}" >edit</button></li>
     </ul>
 </div>`
@@ -256,6 +258,8 @@ function dat(a) {
                         <h3>tahun: ${a.year}</h3>
                     </li>
                     <li><button class="btn hapus" name="${a.title}" >hapus</button></li>
+                    <li><button class="btn2 belum" name="${a.title}">belum di Baca</button></li>
+
                 </ul>
             </div>
 </div>`
@@ -358,6 +362,42 @@ baca.forEach(a => {
 
 })
 //! tutup halaman baca
+//! ketika tombol belum di baca di klik
+const belum = document.querySelectorAll('.belum')
+belum.forEach(a => {
+    a.addEventListener('click', function () {
+        const ubah = a.getAttribute('name')
+        console.log(ubah);
+        const isComplete = namaIsComplete(ubah)
+        console.log(isComplete);
+        const datanya1 = localStorage.getItem(`data`)
+        const data1 = JSON.parse(datanya1)
+        let completeJumb1 = ``
+        data1.forEach((a, b) => {
+            if (a.title === isComplete.title) {
+                a.isComplete = "false"
+                localStorage.removeItem('jumbo')
+                localStorage.setItem('jumbo', JSON.stringify(a))
+                completeJumb1 += jumFal(a)
+                complete1.push(a)
+            } else {
+                const datanya2 = localStorage.getItem(`data`)
+                const data2 = JSON.parse(datanya2)
+                complete1.push(data2[b])
+            }
+        })
+
+        container1.innerHTML = completeJumb1
+        alert(' data sudah di pindahkan')
+        console.log(complete1);
+        localStorage.removeItem('data')
+        localStorage.setItem('data', JSON.stringify(complete1))
+        complete1 = []
+        location.reload()
+    })
+})
+
+//! tutup
 // ! ketika input search di  gunakan
 const inputSearch = document.querySelector('.inputSearch')
 const buttonSearch = document.querySelector('.buttonSearch')
