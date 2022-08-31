@@ -312,6 +312,7 @@ hapus.forEach(a => {
             localStorage.setItem('data', JSON.stringify(lo))
             b.preventDefault()
             lo = []
+            location.reload()
         }
     })
 })
@@ -351,6 +352,7 @@ baca.forEach(a => {
         localStorage.removeItem('data')
         localStorage.setItem('data', JSON.stringify(complete))
         complete = []
+        location.reload()
 
     })
 
@@ -449,7 +451,7 @@ edit.addEventListener('click', function () {
         })
         localStorage.removeItem('data')
         localStorage.setItem('data', JSON.stringify(arr))
-
+        location.reload()
     }
 })
 
