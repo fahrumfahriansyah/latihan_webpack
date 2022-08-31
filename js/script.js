@@ -425,14 +425,16 @@ edit.addEventListener('click', function () {
 
     let tahun = confirm('edit tahun ?')
     if (tahun) {
-        years = prompt('masukan tahun yyyy-dd-mm')
+        years = prompt(`masukan tahun yang baru 
+cth = y=tahun d=bulan m=hari
+yyyy-dd-mm`)
         if (years) {
             data1.year = years
         }
     }
     const valueEdit = namaEdit(title)
     if (valueEdit) {
-        alert('data judul buku sudah ada anda harus mengisi data yang penulis yang baru')
+        alert('data judul buku sudah ada anda harus mengisi data judul yang baru')
     } else {
         alert('refresh halaman')
         localStorage.removeItem('jumbo')
