@@ -307,12 +307,11 @@ hapus.forEach(a => {
         })
         let cons = confirm('Apakah anda yakin?')
         if (cons) {
-            alert('data sudah di hapus')
+            alert('buku telah di hapus silakan refresh halaman')
             localStorage.removeItem('data')
             localStorage.setItem('data', JSON.stringify(lo))
             b.preventDefault()
             lo = []
-            location.reload()
         }
     })
 })
@@ -347,12 +346,11 @@ baca.forEach(a => {
             }
         })
         container1.innerHTML = completeJumb
-        alert('data sudah di pindahkan')
+        alert('refresh halaman data sudah di pindahkan')
         console.log(complete);
         localStorage.removeItem('data')
         localStorage.setItem('data', JSON.stringify(complete))
         complete = []
-        location.reload()
 
     })
 
@@ -434,7 +432,7 @@ edit.addEventListener('click', function () {
     if (valueEdit) {
         alert('data judul buku sudah ada anda harus mengisi data yang penulis yang baru')
     } else {
-        alert('data buku sudah di ganti')
+        alert('refresh halaman')
         localStorage.removeItem('jumbo')
         localStorage.setItem('jumbo', JSON.stringify(data1))
         // ?
@@ -451,7 +449,7 @@ edit.addEventListener('click', function () {
         })
         localStorage.removeItem('data')
         localStorage.setItem('data', JSON.stringify(arr))
-        location.reload()
+
     }
 })
 
