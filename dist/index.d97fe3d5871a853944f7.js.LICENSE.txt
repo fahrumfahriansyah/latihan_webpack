@@ -1,0 +1,19 @@
+//!
+
+//! data jumbo
+
+//! ketika data di load
+
+//! ketika input di click
+
+//! tutup
+
+//! tutup ketika data di load
+
+//! tutup ketika input di klik
+
+//!pencarian boolean
+
+//!tutup datajumbo
+
+//!tutup pencarian boolean
